@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9b</title>
+</head>
+<body>
+
+  <button class="firstBTN">9b</button>
+  <button class="secondBTN">9b</button>  <!-- fixed: "secontBTN" → "secondBTN" -->
+
+  <script>
+    const btn1 = document.querySelector(".firstBTN");
+    console.log(btn1);
+
+    const btn2 = document.querySelector(".secondBTN"); // grab the element
+    btn2.innerText = "9b done!";                       // fixed: innerTEXT → innerText
+    console.log(btn2);
+  </script>
+
+</body>
+</html>
