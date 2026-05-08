@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9e</title>
+</head>
+<body>
+
+  <input class="js-input" onkeydown="handleKey(event)">
+  <button class="js-button" onclick="go()">Submit</button>
+  <p class="js-para"></p>
+
+  <script>
+    function go() {
+      const text = document.querySelector('.js-input').value;
+      document.querySelector('.js-para').innerHTML = `Your name is: ${text}`;
+    }
+
+    function handleKey(event) {
+      if (event.key === 'Enter') {
+        go();
+      }
+    }
+  </script>
+
+</body>
+</html>

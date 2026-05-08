@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Object</title>
-</head>
+<html>
 <body>
+
+  <input class="x">
+  <button onclick="go()">Go</button>
+
   <script>
-    
+    function go() {
+      // Select by class 'x' and alert the value
+      console.log(document.querySelector('.x').value);
+    }
   </script>
+
 </body>
 </html>

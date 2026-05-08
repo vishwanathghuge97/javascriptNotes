@@ -1,15 +1,15 @@
 # DOM - Document Object Model
 
-- `document` is built in
-- but objects like `console`, `Math`, `JSON`, `localStorage` etc. are built in objects provided by JS
-- DOM = another built in object called **document object**
-- The document object **represents / models the webpage**
+- built objects provided by `js`  ⬇️
+- built objects like `console`, `Math`, `JSON`, `localStorage` etc. 
+- DOM = another built in object called **document object model**
+- The **document object model** represent the webpagge
 
 ---
 
 ```js
-document.body.innerHTML = 'hello';
-//  ^       ^      ^
+document    .    body.       innerHTML = 'hello';
+//  ^       ^      ^             ^   
 // built-in  dot  property of     property
 // object  notation  document    to change content
 //                (but itself
@@ -42,7 +42,7 @@ document.querySelector(".box")  // first element with class box
 document.querySelector("#id")   // element with that id
 ```
 - lets us get any element from the page and put it inside JavaScript
-- `< >` = means the actual tag
+
 
 > every HTML element has a property `.innerHTML`  
 > every HTML element is a JS Object
@@ -61,8 +61,35 @@ element.innerText  // → "Hello World"          (only text, not tags/spaces)
 ---
 
 ## Input & `.value`
+## Input
+`<input>` → void element (no closing tag, no inner content) <br>
+**<input> yes this is the meaning of Textbox** .
+<br>1) It is an HTML attribute <br>  2)it is a for ``Textbox``
 
-`<input>` → void element (no closing tag, no inner content)
+## .value
+
+
+```
+<!DOCTYPE html>
+<html>
+<body>
+
+  <input class="x">
+  <button onclick="go()">Go</button>
+
+  <script>
+    function go() {
+      // Select by class 'x' and alert the value
+      console.log(document.querySelector('.x')); // <input class="x">
+      console.log(document.querySelector('.x').value); //whatever user type in TextBox. eg: hello
+    }
+  </script>
+
+</body>
+</html>
+
+```
+
 
 ```js
 document.querySelector("input").value        // read — gets what user typed
@@ -92,6 +119,7 @@ String() // converts any value to its String
 - → it will be converted into a number
 
 ```js
+example
 '25' - 5  // → 20 ✅
 '25' * 2  // → 50 ✅
 ```
@@ -104,8 +132,8 @@ String() // converts any value to its String
 
 ## Events & Event Listeners
 
-- Clicks, keydowns → are **events**
-- `onclick`, `onkeydown` → are **event listeners**
+- **events**→ are Clicks, keydowns 
+- **event listeners** → are `onclick`, `onkeydown` 
 
 **HTML attribute:**
 ```html
