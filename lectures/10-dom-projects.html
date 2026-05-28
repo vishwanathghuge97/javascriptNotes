@@ -1,0 +1,53 @@
+<script>
+  /**
+   * STRATEGY: UX Event Listening
+   * Reasoning: Users expect the "Enter" key to submit forms. 
+   * By passing the 'event' object, we can intercept specific keystrokes.
+   */
+  function handleCostKeydown(event) {
+    if (event.key === 'Enter') {
+      calculateTotal();
+    }
+  }
+
+  /**
+   * STRATEGY: Data Type Synchronization
+   * Reasoning: HTML input values are ALWAYS strings (text), even if the user types 50. 
+   * We must "cast" it to a Number, or else '40' + 10 would become '4010' (concatenation).
+   */
+  function calculateTotal() {
+    // 1. Select the element from the DOM "tree"
+    const inputElement = document.querySelector('.js-cost-input');
+    
+    // 2. Conversion: String -> Number
+    let cost = Number(inputElement.value);
+
+    // 3. Business Logic: Applying the shipping rule
+    if (cost < 40) {
+      cost = cost + 10;
+    }
+
+    // 4. Output: We use a Template Literal (backticks ``) to easily mix text and variables
+    document.querySelector('.js-total-cost')
+      .innerHTML = `$${cost}`;
+  }
+
+  /**
+   * STRATEGY: State Management via the DOM
+   * Reasoning: We use the button's own text as a "source of truth" to decide 
+   * what happens next. If it says 'Subscribe', we know the user is currently unsubscribed.
+   */
+  function subscribe() {
+    const buttonElement = document.querySelector('.js-subscribe-button');
+
+    if (buttonElement.innerText === 'Subscribe') {
+      // Action: Update text AND visual state (CSS class)
+      buttonElement.innerHTML = 'Subscribed';
+      buttonElement.classList.add('is-subscribed');
+    } else {
+      // Action: Revert to original state
+      buttonElement.innerHTML = 'Subscribe';
+      buttonElement.classList.remove('is-subscribed');
+    }
+  }
+</script>
