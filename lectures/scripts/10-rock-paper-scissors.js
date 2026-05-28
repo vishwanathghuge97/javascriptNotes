@@ -15,7 +15,7 @@ if (!score) {
   };
 }
 */
-
+gg
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 
